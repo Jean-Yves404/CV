@@ -15,6 +15,7 @@
 					<li><a href="experiences.php">Expériences</a></li>
 					<li><a href="loisir.php">Loisirs</a></li>
 					<li><a href="utilisateur.php">Profil Admin</a></li>
+					<li><a href="index.php?deconnect">Deconnexion</a></li>
 				</ul>
 				<div class="clear"></div>
 			</div>	

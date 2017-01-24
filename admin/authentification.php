@@ -18,7 +18,7 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le name du bouton
 				$ligne = $sql->fetch();//pour retrouver son nom et prénom
 
 			$_SESSION['connexion']='connecté';
-			$_SESSION['id_utilisateur']=$ligne['id_utilisateur';]
+			$_SESSION['id_utilisateur']=$ligne['id_utilisateur'];
 			$_SESSION['prenom']=$ligne['prenom'];
 			$_SESSION['nom']=$ligne['nom'];
 
@@ -33,10 +33,23 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le name du bouton
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+	<link rel="stylesheet" type="text/css" href="../css/style_formulaire.css">
 	<meta charset="uft-8">
-	<title></title>
+	<title>Connexion</title>
 </head>
 <body>
-
+	
+	<div>
+		<form method="post">
+    <div class="container">
+      <img src="../img/nwar.jpg" alt="image" />
+    <div class="form-input"><i class="fa fa-user fa-2x" aria-hidden="true"></i>
+     <input  type="text" name="email"  placeholder="Veuillez entrer votre @ " /></div>
+    <div class="form-input"><i class="fa fa-lock fa-2x" aria-hidden="true"></i>
+      <input type="password" name="mdp"  placeholder="Veuillez entrer votre mot de passe" /></div>
+   <input type="submit" id="submit" name="connexion" value="valider"/><br>
+      <a href="#">Mot de passe oublié ?</a>
+  </div></form>
+	</div>	
 </body>
 </html>

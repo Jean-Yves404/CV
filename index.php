@@ -71,9 +71,9 @@
                     <li>
                         <a class="page-scroll" href="#about">Expérience</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="page-scroll" href="#team">Team</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
@@ -93,7 +93,7 @@
                     <div class="intro-heading"><?php echo $titre['titre_cv'];  ?></div>
                     <a href="#services" class="page-scroll btn btn-xl">   +   </a>
                 </div>
-            </div>
+            </div>  <br><br><br><br><br><br><br><br><br><br><br><br>
         </header>
     </div>
 
@@ -113,7 +113,7 @@
                         <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Développement web</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Réalisation technique et le développement informatique d'un site web.<br>Je programme les fonctionnalités qui correspondent aux besoins du client pour son site web.</p>
                 </div>
                 <div class="col-md-6">
                     <span class="fa-stack fa-4x">
@@ -121,7 +121,7 @@
                         <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Elaboration de sites vous offrant une expérience de lecture et de navigation optimales quelle que soit sa gamme d'appareil <br>(téléphones mobiles, tablettes, moniteurs d'ordinateur de bureau).</p>
                 </div>
                 <!-- <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -142,8 +142,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Formation</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Formation</h2> <br>
+<!--                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>  ↑ Sous titre -->
                 </div>
             </div>
             <div class="row">
@@ -185,11 +185,11 @@
                         <img src="front/img/portfolio/treehouse.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>BAC ES</h4>
+                        <p class="text-muted">Lycée Robert Schuman</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
+<!--                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -230,7 +230,7 @@
                         <h4>Dreams</h4>
                         <p class="text-muted">Website Design</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -319,7 +319,7 @@
     </section>
 
     <!-- Team Section -->
-     <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
+     <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
     <section id="team" class="bg-light-gray">
         <div class="container">
             <div class="row">
@@ -381,7 +381,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Clients Aside -->
     <aside class="clients">
@@ -412,11 +412,12 @@
     </aside>
 
     <!-- Contact Section -->
+
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">M'écrire</h2>
+                    <h2 class="section-heading">Me contacter</h2>
                     <h3 class="section-subheading text-muted">Laissez-moi un message :</h3>
                 </div>
             </div>

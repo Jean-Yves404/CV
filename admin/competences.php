@@ -1,5 +1,6 @@
-<?php require("../connexion/connexion.php");
+<?php require("../connexion/connexion.php"); ?>
 
+<?php
 session_start(); // Connexion/Déconnexion
 
     if(isset($_SESSION['connexion'])&& $_SESSION['connexion'] == 'connecté') {
@@ -22,10 +23,9 @@ session_start(); // Connexion/Déconnexion
 
         header('location:../index.php');
     }
-
  ?>
 
-<?php // On insère une compétence
+<?php // On insère une compétence ↓
 
     if(isset($_POST['competences'])){ // On vérifie si on insert une nouvelle compétence
         if($_POST['competences']!='' && $_POST['titre_competence']!=''){
@@ -36,46 +36,32 @@ session_start(); // Connexion/Déconnexion
             header('location:../admin/competences.php');
             exit();
 
-    	}else{
+    	} // Fermeture du if
 
-    	}
+    } // Fermeture du isset
 
-    	
-        } // ferme le isset
-
-//on supprime competence
+//On supprime compétence ↓
 
 if(isset($_GET['id_competences'])){
     $suppression = $_GET['id_competences'];
-    $sql = "DELETE FROM competences WHERE id_competences =
-     '$suppression'";
+    $sql = "DELETE FROM competences WHERE id_competences = '$suppression'";
     $pdo -> query($sql);
-}
-
+    }
 ?>
 
-
-
-<?php require ("../connexion/connexion.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-	<meta charset="utf-8">
-    	<title>Compétences</title>
-    	<link rel="stylesheet" type="text/css" href="../css/style.css">
+       <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+        <title>Compétences</title>
 	</head>
-    	<?php include('menu_nav.php'); ?>
-    
-
-	<body>
+    <body>
+    <?php include('menu_nav.php'); ?>
     <div id="contenu">
-        <header>
-    
-        </header>
-        <h1> Les compétences numériques    </h1>
-        <div id="menu">
-            <h2>Connexion : déconnexion</h2>
-        </div>
+
+        <h1>Les compétences numériques</h1>
 
         <div id="contenuPrincipal">
             <div>
@@ -122,10 +108,7 @@ if(isset($_GET['id_competences'])){
                     <?php } ?>
                 </table>
         </div>
-
     </div>
-</body>
-
-
-
+    <?php include('menu_footer.php'); ?>
+    </body>
 </html>

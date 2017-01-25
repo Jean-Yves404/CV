@@ -1,5 +1,6 @@
-<?php
-require("../connexion/connexion.php");
+<?php require("../connexion/connexion.php");  ?>
+
+<?php 
 session_start(); // Connexion/Déconnexion
 
     if(isset($_SESSION['connexion'])&& $_SESSION['connexion'] == 'connecté') {
@@ -25,8 +26,9 @@ session_start(); // Connexion/Déconnexion
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+	<meta charset="utf-8">
 	<title>Bonjour Jean-Yves</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"> 
@@ -48,5 +50,8 @@ session_start(); // Connexion/Déconnexion
 			echo "<br>";
 		?>
 		</div>
+				<?php include('menu_footer.php'); ?>
+
+
 	</body>
 </html>

@@ -58,6 +58,15 @@ header{
 nav{
     line-height: 80px;
 }
+#contenu{
+    background-color: red;
+}
+
+#contenuPrincipal{
+    background-color: green;
+    width: 800px;
+    margin: auto;
+}
 
 #point{
     color: #2980b9;

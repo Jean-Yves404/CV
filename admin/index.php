@@ -35,6 +35,7 @@ session_start(); // Connexion/Déconnexion
 </head>
 <body>
 		<?php include('menu_nav.php'); ?>
+		<br>
 		<div class="container">
 		<?php
 			$date = date("d M Y");
@@ -50,6 +51,7 @@ session_start(); // Connexion/Déconnexion
 			echo "<br>";
 		?>
 		</div>
+		<br>
 				<?php include('menu_footer.php'); ?>
 
 

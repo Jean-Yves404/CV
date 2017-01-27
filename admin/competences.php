@@ -38,7 +38,7 @@ session_start(); // Connexion/Déconnexion
 
     	} // Fermeture du if
 
-    } // Fermeture du isset
+    }//←Fermeture du isset
 
 //On supprime compétence ↓
 

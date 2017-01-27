@@ -71,10 +71,10 @@ session_start();
         <header>
             <?php require("../admin/menu_nav.php"); ?>
         </header>
+            <h1> Les expériences</h1>
 
         <div class="wrapper">
-            <h1> Les expériences</h1>
-                <form action="experiences.php" method="POST">
+                <form action="experiences.php" method="POST" id="formExp">
                     <table width="200px" border="">
                         <tr>                    
                             <td>Titre experience</td> 
@@ -98,7 +98,9 @@ session_start();
                         </tr>
                     </table>    
                 </form>
+        </div>
 
+        <div class="wrapper">
                 <?php 
                     $sql = $pdo->prepare("SELECT * FROM experiences");
                     $sql->execute(); // execute la 
@@ -128,5 +130,6 @@ session_start();
                     <?php };?>
                     </table>
         </div>
+        <?php include('menu_footer.php'); ?>
     </body>
 </html>

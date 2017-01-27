@@ -1,6 +1,4 @@
-<footer style="background-color: #2C3E50;">
-
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer>
 
 	<hr style="color: red;">
 

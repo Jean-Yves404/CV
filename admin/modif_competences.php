@@ -60,5 +60,6 @@ $ligne_competence = $sql->fetch();
 		</div>
 
 	</div>
+	<?php include('menu_footer.php'); ?><!-- ←Le Footer -->
 </body>
 </html>

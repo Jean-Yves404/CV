@@ -1,7 +1,7 @@
 <?php require '../connexion/connexion.php'  ?>
 <?php
 
-session_start(); // Mettre dans toutes les pages SESSION et identification 
+session_start(); //←Mettre dans toutes les pages SESSION et identification 
 
 if(isset($_POST['connexion'])){// on envoie le formulaire avec le name du bouton, connexion on a cliqué sur le bouton
 
@@ -22,7 +22,7 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le name du bouton
 			$_SESSION['prenom']=$ligne['prenom'];
 			$_SESSION['nom']=$ligne['nom'];
 
-				header('location:index.php'); // Vers la page d'accueil de l'admin
+				header('location:index.php'); //←Vers la page d'accueil de l'admin
 
 			}
 
@@ -42,7 +42,7 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le name du bouton
 	<div>
 		<form method="post">
     <div class="container">
-      <img src="../img/nwar.jpg" alt="image" />
+      <img src="../img/admin_photo.jpg" alt="image" />
     <div class="form-input"><i class="fa fa-user fa-2x" aria-hidden="true"></i>
      <input  type="text" name="email"  placeholder="Veuillez entrer votre @ " /></div>
     <div class="form-input"><i class="fa fa-lock fa-2x" aria-hidden="true"></i>

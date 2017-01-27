@@ -47,6 +47,10 @@ table {
 body{
     font-family: 'Noto Sans', sans-serif;
     background-color: #fff  ;
+    background-image: url(../img/background_admin.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    text-align: center;
 }
 
 header{
@@ -101,7 +105,7 @@ nav{
 
 }
 
-#logo{
+#logo{ /*Logo " Admin.JeanYves*/
 
     display: inline-block;
     font-family: Impact, Charcoal, sans-serif;
@@ -159,3 +163,25 @@ th{
 td{
      border:3px solid #2c3e50;
 }
+
+footer{
+
+    height: 210px;
+    background-color: #2C3E50;
+}
+
+/*body{
+
+    text-align: center;
+}*/
+
+/*↓Le formulaire de la page " expériences.php "  ↓ */
+
+.wrapper{
+    width: 600px;
+    margin: 0 auto;
+    float: auto ;
+
+}
+
+/*↑Le formulaire de la page " expériences.php "  ↑ */

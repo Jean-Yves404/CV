@@ -53,8 +53,9 @@ session_start(); // Connexion/Déconnexion
 		        echo $utilisateur['ville'].'<br>' ;
 		        echo $utilisateur['pays'].'<br>' ;
 		        echo $utilisateur['notes'] .'<br>';
-		?>   
+		?>
 
+	<?php include('menu_footer.php'); ?>  <!-- ←Le footer -->
 	</body>
 </html>
 

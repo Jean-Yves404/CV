@@ -34,3 +34,6 @@
 </head>
     <?php include('menu_nav.php'); ?>
     <?php include('suppression_loisirs.php'); ?>
+<body>
+    <?php include('menu_footer.php'); ?><!-- ←Le Footer -->
+</body>

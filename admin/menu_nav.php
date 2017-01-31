@@ -18,7 +18,7 @@
 						<li><a href="competences.php">Compétences</a></li>
 						<li><a href="experiences.php">Expériences</a></li>
 						<li><a href="formation.php">Formation</a></li>
-						<li><a href="loisirs.php">Loisirs</a></li>
+						<!-- <li><a href="loisirs.php">Loisirs</a></li> -->
 						<li><a href="utilisateur.php">Profil Admin</a></li>
 						<li><a href="#">Contact</a></li>
 						<!-- <li><a href="index.php?deconnect">Déconnexion</a></li> -->

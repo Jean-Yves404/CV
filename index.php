@@ -66,10 +66,10 @@
                         <a class="page-scroll" href="#services">A propos</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Formation</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">Expérience</a>
+                        <a class="page-scroll" href="#about">Professionel</a>
                     </li>
                     <!-- <li>
                         <a class="page-scroll" href="#team">Team</a>
@@ -244,8 +244,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Expérience</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Professionel</h2>
+                    <h3 class="section-subheading text-muted">Mes éxpériences professinelles passées</h3>
                 </div>
             </div>
             <div class="row">
@@ -385,8 +385,8 @@
         </div>
     </section> -->
 
-    <!-- Clients Aside -->
-    <aside class="clients">
+    <!-- Clients Aside ↓ -->
+    <!-- <aside class="clients">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
@@ -411,7 +411,7 @@
                 </div>
             </div>
         </div>
-    </aside>
+    </aside> -->
 
     <!-- Contact Section -->
 
@@ -419,7 +419,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Me contacter</h2>
+                    <h2 class="section-heading">Me contacter <i class="fa fa-envelope" aria-hidden="true"></i>
+</h2>
                     <h3 class="section-subheading text-muted">Laissez-moi un message :</h3>
                 </div>
             </div>

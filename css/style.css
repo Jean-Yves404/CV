@@ -185,3 +185,15 @@ footer{
 }
 
 /*↑Le formulaire de la page " expériences.php "  ↑ */
+
+#déco{
+    text-decoration: none;
+    
+}
+
+.fa.fa-power-off{
+    font-size: 36px;
+    color: #2980B9;
+    padding: 0 5px;
+    border-color: black;
+}

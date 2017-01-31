@@ -27,15 +27,16 @@ session_start();
 ?>
 
 <?php
-    if(isset($_POST['titre_exp'])){ // On vérifie si on insert une nouvelle compétence
+    if($_POST){ // On vérifie si on insert une nouvelle compétence
         if($_POST['titre_exp']!='' && $_POST['sous_titre_exp']!='' && $_POST['dates']!='' && $_POST['description']!=''){
+
             $titre_exp = addslashes($_POST['titre_exp']);
             $sous_titre_exp = addslashes($_POST['sous_titre_exp']);
             $dates = addslashes($_POST['date_exp']);
             $description = addslashes($_POST['description']);
             $id_experiences = addslashes($_POST['id_experiences']);
 
-        $pdo->exec("INSERT INTO experiences VALUES (NULL, '$titre_exp', '$sous_titre_exp ', '$dates', '$description', 'id_experiences' '1')");
+        $pdo->exec("INSERT INTO experiences VALUES (NULL, '$titre_exp', '$sous_titre_exp ', '$dates', '$description')");
             header('location: ../admin/experiences.php');
             exit();
 
@@ -43,8 +44,8 @@ session_start();
         } //←fermeture du isset
 
 //↓ Suppression d'une experience ↓
-    if(isset($_GET['id_experience'])){
-    $suppression = $_GET['id_experience'];
+    if(isset($_GET['id_experiences'])){
+    $suppression = $_GET['id_experiences'];
     $sql = "DELETE FROM experiences WHERE id_experiences = '$suppression'";
     $pdo -> query($sql);
     }
@@ -74,7 +75,7 @@ session_start();
             <h1> Les expériences</h1>
 
         <div class="wrapper">
-                <form action="experiences.php" method="POST" id="formExp">
+                <form action="" method="POST" id="formExp">
                     <table width="200px" border="">
                         <tr>                    
                             <td>Titre experience</td> 

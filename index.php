@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
+<!-- ↓ Je décclare mes requêtes pour ,ensuite, pouvoir les afficher. ↓ -->
+<?php /* ↓ Mes Requêtes ↓ */
     require('connexion/connexion.php');
     $bdd = $pdo -> query ("SELECT * FROM utilisateur");
-    $utilisateur = $bdd -> fetch();
+    $utilisateur = $bdd -> fetch();  //←Tout ce qui concerne la table "utilisateur".
 
     $bdd = $pdo -> query ("SELECT * FROM titre");
-    $titre = $bdd -> fetch();
+    $titre = $bdd -> fetch(); //← All ce qui concerne la table "titre". 
 
-?>
+    $bdd = $pdo -> prepare ("SELECT * FROM formation");
+    $formation = $bdd -> execute(); // All about "Formation" table.
+
+    $bdd = $pdo -> query ("SELECT * FROM loisirs");
+    $loisirs = $bdd -> fetch();
+
+    $bdd = $pdo -> query ("SELECT * FROM experiences");
+    $experiences = $bdd -> fetch();
+
+    $bdd = $pdo -> query ("SELECT * FROM competences");
+    $competences = $bdd -> fetch();
+
+?>  <!-- ↑ Mes Requêtes ↑ -->
+
 <head>
 
     <meta charset="utf-8">
@@ -53,7 +67,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><?php echo $utilisateur['prenom']. ' '. $utilisateur['nom'];  ?></a>
+                <a class="navbar-brand page-scroll" href="#page-top"><?= $utilisateur['prenom']. ' '. $utilisateur['nom'];  ?></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -76,6 +90,9 @@
                     </li> -->
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                       <a href="#"> <i class="fa fa-user" aria-hidden="true"></i></a> 
                     </li>
                 </ul>
             </div>
@@ -135,7 +152,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Grid Section -->
+    <!-- FORMATION Grid Section -->
      <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg">
 </div>
     <section id="portfolio" class="bg-light-gray">
@@ -159,8 +176,8 @@
                         <img src="front/img/portfolio/logo-ma6TvaCoder.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Ma6tVaCoder</h4>
-                        <p class="text-muted">LePoleS<br>Juillet 2016</p>
+                        <h4><?php echo $formation['titre_f']; ?></h4>
+                        <p class="text-muted"> <?php echo $formation['sous_titre_f'] ?> <br> <?php echo $formation['date_f'] ?></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -170,11 +187,11 @@
                                 <!-- <i class="fa fa-plus fa-3x"></i> -->
                             </div>
                         </div>
-                        <img src="front/img/portfolio/geoa.jpg" class="img-responsive" alt="" style="width: 293.333px; height: 190px;">
+                        <img src="front/img/portfolio/geoa.jpg" class="img-responsive" alt="" >
                     </a>
                     <div class="portfolio-caption">
-                        <h4>L2 Géographie et Aménagement</h4>
-                        <p class="text-muted">Université du Havre</p>
+                        <h4><?php echo $formation['titre_f']; ?> L2 Géographie et Aménagement   </h4>
+                        <p class="text-muted"> <?php echo $formation['sous_titre_f'] ?> <br> <?php echo $formation['date_f'] ?> Université du Havre </p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -187,8 +204,8 @@
                         <img src="front/img/portfolio/diplomebac.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Baccalauréat ES <i class="fa fa-graduation-cap" aria-hidden="true"></i></h4>
-                        <p class="text-muted">économie et social<br>Lycée Robert Schuman</p>
+                        <h4><?php echo $formation['titre_f']; ?> Baccalauréat ES <i class="fa fa-graduation-cap" aria-hidden="true"></i></h4>
+                        <p class="text-muted"><?php echo $formation['sous_titre_f'] ?> <br> <?php echo $formation['date_f'] ?> économie et social<br>Lycée Robert Schuman</p>
                     </div>
                 </div>
 <!--                 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -237,14 +254,14 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section -->     <!-- ↓ Partie  PARCOURS PROFESSIONEL ↓ -->
      <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg">
 </div>
     <section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Professionel</h2>
+                    <h2 class="section-heading">Parcours professionel</h2>
                     <h3 class="section-subheading text-muted">Mes éxpériences professinelles passées</h3>
                 </div>
             </div>
@@ -257,8 +274,8 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                    <h4> <?php echo $experiences['dates']; ?> ←PHP </h4>
+                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?> </h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -271,8 +288,8 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
+                                    <h4>  <?php echo $experiences['dates']; ?> ←PHP  </h4>
+                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -285,8 +302,8 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
+                                    <h4> <?php echo $experiences['dates']; ?> ←PHP </h4>
+                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -299,8 +316,8 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                    <h4> <?php echo $experiences['dates']; ?> ←PHP </h4>
+                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -309,9 +326,9 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
+                                <h4>Prenez
+                                    <br>mon
+                                    <br>âme !</h4>
                             </div>
                         </li>
                     </ul>
@@ -468,11 +485,11 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        <li><a href="https://fr-fr.facebook.com/"><i class="fa fa-facebook"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        <li><a href="https://fr.linkedin.com/"><i class="fa fa-linkedin"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -480,7 +497,8 @@
                     <ul class="list-inline quicklinks">
                         <li><a href="#">Privacy Policy</a>
                         </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li>
+                        <a href="#"> <i class="fa fa-user" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>

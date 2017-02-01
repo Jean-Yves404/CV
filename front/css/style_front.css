@@ -5,12 +5,13 @@
 
 
 
-/* Ici c'est le Parallax ↓ */
+/* --- Ici c'est le Parallax ↓ -------------------------------------------------- */
 .parallax-window {
     min-height: 400px;
     background: transparent;
 }
-/* Parallax ↑ */
+/* ↑ --- Parallax ↑ --------------------------------------------------------------- */
+
 
 header {
     background-image: none;
@@ -33,6 +34,8 @@ header .intro-text .intro-lead-in {
     line-height: 40px;
     margin-bottom: 50px;
 }
+
+
 /*La partie (où il y a le formulaire) pour me contacter ↓ */
 section#contact {
 	background-color: #222;
@@ -43,5 +46,73 @@ section#contact {
     background-size: cover;
     
 }
-/*La partie pour me contacter ↑ */
+/* ↑ La partie pour me contacter ↑ */
 
+
+/* --- ↓ Le formulaire de contact  ME CONTACTER ↓ ------------------------- */
+/* ↓ Les ID simples ↓ */
+#contactForm{
+    background-color: red;
+}
+#name{
+    background-color: yellow;
+}
+
+#email{
+    background-color: yellow;
+}
+
+#phone{
+    background-color: yellow;
+}
+
+#message{
+    background-color: yellow;
+
+
+}
+/* ↑ Les ID simples ↑ */
+
+
+/* ↓ Les (FOCUS) ID avec Focus ↓ */
+#name:focus{
+    background-color: blue;
+}
+
+#email:focus{
+    background-color: blue;
+}
+
+#phone:focus{
+    background-color: blue;
+}
+
+#message:focus{
+    background-color: blue;
+}
+
+/* ↑ Les (FOCUS) ID avec Focus ↑ */
+
+
+/*input[type=text]:focus{
+    background-color: red;
+}*/
+
+
+/*--- ↑ Le formulaire de contact  ME CONTACTER ↑ ------------------------ */
+
+
+/*↓ Image L2 GéoA Université Le Havre*/
+.portfolio-hover img{
+    width: 359.333px;
+    height: 190px;}
+
+
+
+
+
+
+/*    .portfolio-hover img{
+    width: 359.333px;
+    height: 190px;}*/
+  

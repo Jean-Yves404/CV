@@ -49,7 +49,7 @@ body{
     background-color: #fff  ;
     background-image: url(../img/background_admin.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     text-align: center;
 }
 

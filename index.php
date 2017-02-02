@@ -14,11 +14,14 @@
     $bdd = $pdo -> query ("SELECT * FROM loisirs");
     $loisirs = $bdd -> fetch();
 
+
     $bdd = $pdo -> query ("SELECT * FROM experiences");
-    $experiences = $bdd -> fetch();
+    $experiences = $bdd -> fetchAll(); /*fetchAll() permet de rrécuperer tout la table*/
+    print_r($experiences);
 
     $bdd = $pdo -> query ("SELECT * FROM competences");
     $competences = $bdd -> fetch();
+    print_r($competences);
 
 ?>  <!-- ↑ Mes Requêtes ↑ -->
 

@@ -35,6 +35,57 @@ header .intro-text .intro-lead-in {
     margin-bottom: 50px;
 }
 
+/*↓ ↓↓ La NAV navigation (Modification de la NAV) ↓↓ ↓*/
+
+.navbar-custom .navbar-brand {/* ← ←← Le titre en haut à gauche de la nav: "Jean-Yves Ndjoli" */
+    color: #fed136;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}
+
+toggle:hover {/*← ←←↓←↓ Les <li>/Burger MENU*/
+    background-color: #fed136;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #ddd;
+}
+.navbar-custom .navbar-toggle {
+    background-color: #fed136;
+    border-color: #fed136;
+    font-size: 12px;
+}
+
+a:hover { /*← ←← Le hover est sur Les <a> venant du <li> */
+    color: #fed136;
+    outline: 0;
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+    /*color: #333;*/
+    background-color: transparent;
+}
+
+/*↑ ↑↑ La NAV navigation (Modification de la NAV) ↑↑ ↑*/
+
+
+
+/* ↓ ---  ↓Le Bouton(BTN) +(à props)↓ --------------↓↓ */
+.btn-xl:hover, .open .dropdown-toggle.btn-xl {
+    color: #fff; /*←Quand il est "activé"(pas en coomentaire) le color: de .btn xl hover se "désactive".*/
+    background-color: #fec503;
+    border-color: #f6bf01;
+}
+.btn.focus, .btn:focus, .btn:hover {
+    /*color: #CC0E0E;*/ /*←Quand il est "activé"(pas en coomentaire) le color: de .btn focus "s'active".
+    text-decoration: none;
+}
+a:hover {
+    /*color: #fed136*/;
+    outline: 0;
+}
+
+/*↑ --- ↑ ↑↑Le Bouton(BTN) +(à propos) ↑↑ -------------- ↑ */
+
+
+
 
 /*La partie (où il y a le formulaire) pour me contacter ↓ */
 section#contact {
@@ -44,7 +95,6 @@ section#contact {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 /* ↑ La partie pour me contacter ↑ */
 
@@ -102,17 +152,15 @@ section#contact {
 /*--- ↑ Le formulaire de contact  ME CONTACTER ↑ ------------------------ */
 
 
-/*↓ Image L2 GéoA Université Le Havre*/
+/* ↓ Image L2 GéoA Université Le Havre ↓ */
 .portfolio-hover img{
     width: 359.333px;
     height: 190px;}
+/* ↑ Image L2 GéoA Université Le Havre↑ */
 
-
-
-
-
-
-/*    .portfolio-hover img{
+/* 
+.portfolio-hover img{
     width: 359.333px;
-    height: 190px;}*/
+    height: 190px;}
+*/
   

@@ -9,8 +9,7 @@
     $bdd = $pdo -> query ("SELECT * FROM titre");
     $titre = $bdd -> fetch(); //← All ce qui concerne la table "titre". 
 
-    $bdd = $pdo -> prepare ("SELECT * FROM formation");
-    $formation = $bdd -> execute(); // All about "Formation" table.
+ 
 
     $bdd = $pdo -> query ("SELECT * FROM loisirs");
     $loisirs = $bdd -> fetch();
@@ -152,62 +151,103 @@
         </div>
     </section>
 
-    <!-- FORMATION Grid Section -->
-     <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg">
-</div>
+    <!-- ↓ FORMATION Grid Section ↓ -->
+    
+    <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"> </div> <!-- ←DIV pour les logos (images) --> 
     <section id="portfolio" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Formation <i class="fa fa-graduation-cap" aria-hidden="true"></i>
- </h2> 
+                    <h2 class="section-heading">Formation <i class="fa fa-graduation-cap" aria-hidden="true"></i></h2> 
                     <br>
 <!--                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>  ↑ Sous titre -->
                 </div>
             </div>
-            <div class="row">
+                <!-- 
+                ==== ↓ ETAPE 1 ====
+                On fait appel à notre vairable de la BDD qui a été créée au début pour la Connexion,
+                Pour faire une requête sur l'une de nos table qui est en l'occurence ici, formation, pour pouvoir récupérer Les information dont j'ai besoin.
+                
+                === ETAPE 2 ====
+
+                Pour ce faire, nous avons utilisé la méthode query. Pourquoi ? 
+                Tous simplement parce qu'il n'y a aucun paramètre à sécuriser
+                    exemple :
+                    Imaginons que nous avons un paramatre comme ceci: $query = $bdd -> prepare(SELECT * FROM formation WHERE => titre_f = lepoles <= (ceci est un paramètre) )
+                    Ici par exemple, ce qui définit le paramètre c'est le WHERE titre_f .
+                    Dans ce cas, pour pourvoir protéger cette donnée nous utilisons une requête de méthode prépare
+                    Dans le cas contraire s'il n'y a pas de paramètre nous utilison la méthode query $bdd = $pdo -> query("SELECT * FROM formation <- fin de la requête    => (Aucun paramètre)  <="); .
+
+                Ce que nous avons utilisé en bas car (comme on peut le constater) il n'y'a aucun paramètre a protéger.
+                Donc la méthode la plus justifiable est la query dans notre cas. 
+                    
+                -Merci Myhed.
+                -->
+                <?php $bdd = $pdo -> query ("SELECT * FROM formation ORDER BY id_formation ASC "); ?><!-- ←La requête -->
+                    
+                    <div class="row">
+                    
+                    <?php
+                    while($formation = $bdd  -> fetch( PDO :: FETCH_ASSOC)): /* ← La variable */
+
+                        /* ↑ Ici nous demander d'affecter une variable que nous créons nous-même afin d'y stocker tous nos résultat.
+
+                        Remarque :  La variable créée aurait pu être n'importe quoi, la variable formation a été créée pour une question de logique du code
+                        On aurait pu mettre une variable jeanYvaes ou autre.
+                        Mais il faut toujours rester logique avec son code afin de pouvoir y débugger les chose plus facilement.
+
+                        Le deuxième paramètre qui est  $bdd->fetch(PDO::FETCH_ASSOC)  sert à faire lire la requête SQL que nous avons faite au dessus et de l'éxécuter en même temps pour pouvoir récupérer nos données. 
+
+                        Le PDO::FETCH_ASSOC sert à dire à PHP que c'est un tableau associatif que nous récupérons.
+                        Exemple:
+                                nom => "jeanYves"
+                        Tant dis que le tableau non associatif met à la place d'un chaine de caractère un entier. 
+                        Exemple:
+                                0 => "JeanYves"
+                        
+                        Or, avons parlé tout à l'heure de logique de code. Il est donc plus préférable de la mettre en tableau associatif.
+                        */
+                    ?>
+
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="http://lepoles.org/" class="portfolio-link" data-toggle="modal">
+                <!-- 
+                Ici nous avons demander à php
+
+                Que Si notre formation qui est églae notre tableau de donnée 
+                est égale à ligne dans notre base données qui contient l'id 14
+                
+                Alors on lui met le lien avec lepoles 
+
+                 -->
+                <?php if($formation['id_formation'] == 14):?>
+
+                    <a href="http://lepoles.org/" target="_blank" class="portfolio-link" data-toggle="modal">
+                <?php else: ?>
+                <!-- Sinon on met un lien qui ne pointe sur rien -->
+                    <a href="#" class="portfolio-link" data-toggle="modal">
+                <?php endif; ?>
+
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <!-- <i class="fa fa-plus fa-3x"></i> -->
                             </div>
                         </div>
-                        <img src="front/img/portfolio/logo-ma6TvaCoder.jpg" class="img-responsive" alt="">
+                        <img src="front/img/portfolio/<?= $formation['image_f']; ?>" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4><?php echo $formation['titre_f']; ?></h4>
-                        <p class="text-muted"> <?php echo $formation['sous_titre_f'] ?> <br> <?php echo $formation['date_f'] ?></p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <!-- <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal"> -->
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <!-- <i class="fa fa-plus fa-3x"></i> -->
-                            </div>
+                        <h4> <?php echo $formation['titre_f']; ?> </h4>
+                        <div class="text-muted">
+                        <h5> <?= $formation['sous_titre_f']; ?></h5> 
+                        <p> <?= $formation['description_f']; ?> </p>
+                        <p> <?= $formation['date_f']; ?> </p>
+
                         </div>
-                        <img src="front/img/portfolio/geoa.jpg" class="img-responsive" alt="" >
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4><?php echo $formation['titre_f']; ?> L2 Géographie et Aménagement   </h4>
-                        <p class="text-muted"> <?php echo $formation['sous_titre_f'] ?> <br> <?php echo $formation['date_f'] ?> Université du Havre </p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <!-- <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal"> -->
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <!-- <i class="fa fa-plus fa-3x"></i> -->
-                            </div>
-                        </div>
-                        <img src="front/img/portfolio/diplomebac.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4><?php echo $formation['titre_f']; ?> Baccalauréat ES <i class="fa fa-graduation-cap" aria-hidden="true"></i></h4>
-                        <p class="text-muted"><?php echo $formation['sous_titre_f'] ?> <br> <?php echo $formation['date_f'] ?> économie et social<br>Lycée Robert Schuman</p>
-                    </div>
-                </div>
+
+                <?php endwhile;?>
+ </div>
+
 <!--                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
@@ -274,7 +314,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4> <?php echo $experiences['dates']; ?> ←PHP </h4>
+                                    <h4> <?php echo $experiences['dates']; ?>  </h4>
                                     <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?> </h4>
                                 </div>
                                 <div class="timeline-body">
@@ -288,7 +328,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>  <?php echo $experiences['dates']; ?> ←PHP  </h4>
+                                    <h4>  <?php echo $experiences['dates']; ?>   </h4>
                                     <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
                                 </div>
                                 <div class="timeline-body">
@@ -302,7 +342,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4> <?php echo $experiences['dates']; ?> ←PHP </h4>
+                                    <h4> <?php echo $experiences['dates']; ?>  </h4>
                                     <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
                                 </div>
                                 <div class="timeline-body">
@@ -316,7 +356,7 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4> <?php echo $experiences['dates']; ?> ←PHP </h4>
+                                    <h4> <?php echo $experiences['dates']; ?>  </h4>
                                     <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
                                 </div>
                                 <div class="timeline-body">
@@ -430,7 +470,7 @@
         </div>
     </aside> -->
 
-    <!-- Contact Section -->
+    <!-- ↓ Contact Section ↓ -->
 
     <section id="contact">
         <div class="container">

@@ -15,13 +15,13 @@
     $loisirs = $bdd -> fetch();
 
 
-    $bdd = $pdo -> query ("SELECT * FROM experiences");
-    $experiences = $bdd -> fetchAll(); /*fetchAll() permet de rrécuperer tout la table*/
-    print_r($experiences);
+    $bdd = $pdo -> query ("SELECT * FROM experiences ORDER BY id_experiences DESC");
+    $experiences = $bdd -> fetchAll(); /*fetchAll() permet de récuperer tout la table*/
+    
 
     $bdd = $pdo -> query ("SELECT * FROM competences");
-    $competences = $bdd -> fetch();
-    print_r($competences);
+    $competences = $bdd -> fetchAll();
+    
 
 ?>  <!-- ↑ Mes Requêtes ↑ -->
 
@@ -116,13 +116,13 @@
         </header>
     </div>
 
-    <!-- Services Section -->
+    <!-- Services Section --> <!-- Section A PROPOS -->
     <section id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">A propos </h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Passionné du Web et des nouvelles technologies depuis des années, je me présente aujourd’hui à vous en tant que développeur web junior.</h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -311,62 +311,27 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4> <?php echo $experiences['dates']; ?>  </h4>
-                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?> </h4>
+                        <?php
+                    $i=0;
+                    while($i<count($experiences)){
+                            ?><li <?php if (($i % 2) == 0)
+                                { echo 'class="timeline-inverted"';}?>>
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="front/img/about/<?= $experiences[$i]['image_exp'] ?>" alt="<?= $experiences[$i]['image_exp'] ?>" style="width: 100% ; height: 100%;">
                                 </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4><?= $experiences[$i]['dates']; ?></h4>
+                                            <h4 class="subheading"><?= $experiences[$i]['titre_exp'].' <br> '.$experiences[$i]['sous_titre_exp'];?></h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class=""><?= $experiences[$i]['description'];?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>  <?php echo $experiences['dates']; ?>   </h4>
-                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4> <?php echo $experiences['dates']; ?>  </h4>
-                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4> <?php echo $experiences['dates']; ?>  </h4>
-                                    <h4 class="subheading"> <?php echo $experiences['sous_titre_exp'] .'<br>'. $experiences['titre_exp'] ?>  </h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
+                            </li><?php
+                            $i++;
+                    }                        
+                     ?>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <h4>Prenez

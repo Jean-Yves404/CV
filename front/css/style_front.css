@@ -35,43 +35,80 @@ header .intro-text .intro-lead-in {
     margin-bottom: 50px;
 }
 
-/*↓ ↓↓ La NAV navigation (Modification de la NAV) ↓↓ ↓*/
+
+
+
+
+/*↓ ------ ↓↓ La NAV navigation (Modification de la NAV) ↓↓ ----------- ↓*/
+
+.navbar-custom.affix { /*← ← ← Ici je gère la couleur (background-color) de la nav  */
+    background-color: #0F0B0B;
+    padding: 10px 0;
+}
 
 .navbar-custom .navbar-brand {/* ← ←← Le titre en haut à gauche de la nav: "Jean-Yves Ndjoli" */
-    color: #fed136;
+    color: #B8860B;
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
 }
 
 toggle:hover {/*← ←←↓←↓ Les <li>/Burger MENU*/
-    background-color: #fed136;
+    background-color: #B8860B /*← Nom de la couleur :#B8860B DarkGoldenRod*/;
 }
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
     background-color: #ddd;
 }
 .navbar-custom .navbar-toggle {
-    background-color: #fed136;
-    border-color: #fed136;
+    background-color: #B8860B /*← Nom de la couleur :#B8860B DarkGoldenRod*/;
+    border-color: #B8860B;
     font-size: 12px;
 }
 
 a:hover { /*← ←← Le hover est sur Les <a> venant du <li> */
-    color: #fed136;
+    color: #B8860B /*← Nom de la couleur :#B8860B DarkGoldenRod*/;
     outline: 0;
+}
+
+.navbar-custom .nav li a:focus, .navbar-custom .nav li a:hover {/*← ← ← La couleur des li*/
+    color: #B8860B;
+    outline: 0;
+}
+
+.navbar-custom .navbar-nav > .active > a { /*← ←← Gère la couleur hover Quand on passe d'une page à l'autre*/ 
+    border-radius: 0;
+    color: #fff;
+    background-color: #B8860B;
 }
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
     /*color: #333;*/
-    background-color: transparent;
+    background-color: #C0C0C0 /*← Nom de la couleur #C0C0C0 Silver*/;
 }
 
 /*↑ ↑↑ La NAV navigation (Modification de la NAV) ↑↑ ↑*/
 
 
 
+
 /* ↓ ---  ↓Le Bouton(BTN) +(à props)↓ --------------↓↓ */
+
+.btn-xl {/*← Gère la couleur permanente du BTN (sans passer dessus en hover) */
+    color: #fff;
+    background-color: #B8860B ;
+    border-color: #B8860B;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+.btn-xl.active, .btn-xl:active, .btn-xl:focus, .btn-xl:hover, .open .dropdown-toggle.btn-xl {
+    color: #fff;
+    background-color: #C0C0C0 /*← Nom de la couleur #C0C0C0 Silver*/;
+    border-color: #C0C0C0 /*← Nom de la couleur #C0C0C0 Silver*/;
+}
+
 .btn-xl:hover, .open .dropdown-toggle.btn-xl {
     color: #fff; /*←Quand il est "activé"(pas en coomentaire) le color: de .btn xl hover se "désactive".*/
-    background-color: #fec503;
-    border-color: #f6bf01;
+    background-color: #DAA520/*← Nom de la couleur :#DAA520 GoldenRod*/;
+    border-color: #DAA520/*← Nom de la couleur :#DAA520 GoldenRod*/;
 }
 .btn.focus, .btn:focus, .btn:hover {
     /*color: #CC0E0E;*/ /*←Quand il est "activé"(pas en coomentaire) le color: de .btn focus "s'active".
@@ -86,12 +123,18 @@ a:hover {
 
 
 
+/*↓ ↓↓ ------ La SECTION (Partie) A PROPOS (couleur des fa fa et des (primary) a) ↓ ↓↓ ---------- ↓ */
+.text-primary, a {
+    color: #B8860B /*← Nom de la couleur :#B8860B DarkGoldenRod*/;
+}
+/*↑ ↑↑ ------ La SECTION (Partie) A PROPOS (couleur des fa fa et des (primary) a) ↑ ↑↑ ---------- ↑ */
+
 
 /*La partie (où il y a le formulaire) pour me contacter ↓ */
 section#contact {
 	background-color: #222;
-	/*background-image: url('../img/kuroro.jpg');*/
-	background-image: none;
+	background-image:  ('../map-image.png');
+	/*background-image: none*/;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -99,25 +142,32 @@ section#contact {
 /* ↑ La partie pour me contacter ↑ */
 
 
-/* --- ↓ Le formulaire de contact  ME CONTACTER ↓ ------------------------- */
+/* --- ↓ Le formulaire de contact  ME CONTACTER ↓ SECTION CONTACT ↓------------------------- */
+
+section#contact .form-control:focus {
+    border-color: #0F0B0B;
+    box-shadow: none;
+}
+
+
 /* ↓ Les ID simples ↓ */
 #contactForm{
-    background-color: red;
+    background-color: transparent;
 }
 #name{
-    background-color: yellow;
+    background-color: transparent;
 }
 
 #email{
-    background-color: yellow;
+    background-color: transparent;
 }
 
 #phone{
-    background-color: yellow;
+    background-color: transparent;
 }
 
 #message{
-    background-color: yellow;
+    background-color: transparent;
 
 
 }
@@ -126,19 +176,19 @@ section#contact {
 
 /* ↓ Les (FOCUS) ID avec Focus ↓ */
 #name:focus{
-    background-color: blue;
+    background-color: #8B7357;
 }
 
 #email:focus{
-    background-color: blue;
+    background-color: #8B7357;
 }
 
 #phone:focus{
-    background-color: blue;
+    background-color: #8B7357;
 }
 
 #message:focus{
-    background-color: blue;
+    background-color: #8B7357;
 }
 
 /* ↑ Les (FOCUS) ID avec Focus ↑ */

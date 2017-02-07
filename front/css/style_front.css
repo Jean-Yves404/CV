@@ -37,6 +37,22 @@ header .intro-text .intro-lead-in {
 
 
 
+body{
+    color: #0F0B0B; /*← ← ←Là, je gère la couleur du Text(Body) */
+}
+
+/* ↓ (couleur de la) ↓ Selection de texte ↓ (ou autre) ↓*/
+:: -moz-selection{
+    text-shadow: none;
+    background-color: ##DAA520;
+}
+
+:: selection{
+    text-shadow: none;
+    background-color: ##DAA520;
+}
+/* ↑ (couleur de la) ↑ Selection de texte ↑ (ou autre) ↑*/
+
 
 
 /*↓ ------ ↓↓ La NAV navigation (Modification de la NAV) ↓↓ ----------- ↓*/
@@ -82,6 +98,8 @@ a:hover { /*← ←← Le hover est sur Les <a> venant du <li> */
     /*color: #333;*/
     background-color: #C0C0C0 /*← Nom de la couleur #C0C0C0 Silver*/;
 }
+
+
 
 /*↑ ↑↑ La NAV navigation (Modification de la NAV) ↑↑ ↑*/
 
@@ -198,8 +216,24 @@ section#contact .form-control:focus {
     background-color: red;
 }*/
 
+/*↓ ↓↓ Le .Form Control (contrôle les couleur du txt, bords, etc..) ↓↓ ↓*/
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #FFFFF0;
+    background-color: #FFFFF0;
+    background-image: none;
+    border: 1px solid #FFFFF0;
+    border-radius: 4px;
+}
+/*↑ ↑↑ Le .Form Control (contrôle les couleur du txt, bords, etc..) ↑↑ ↑*/
 
 /*--- ↑ Le formulaire de contact  ME CONTACTER ↑ ------------------------ */
+/* == ↑ Le formulaire de contact  ME CONTACTER ↑ ======================= */
 
 
 /* ↓ Image L2 GéoA Université Le Havre ↓ */
@@ -216,3 +250,30 @@ section#contact .form-control:focus {
 
 
 
+
+
+
+/*====== ↓↓ FOOTER ↓↓ =============================↓↓↓*/
+
+/*↓ Le copyright ↓*/
+.copyright{/* ← Copyright © JYNA 2016 */
+    color: #B8860B;
+}
+/*↓---↓ Les FaFa Réseaux sociaux dans le Footer ↓ --- ↓↓ */
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+    background-color: #B8860B;
+}
+ul.social-buttons li a {
+    display: block;
+    background-color: #0F0B0B; /*←Ce Background-color gère la couleur des fafa*/
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+    outline: 0;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+/*↑---↑ Les FaFa Réseaux sociaux dans le Footer ↑ --- ↑↑ */

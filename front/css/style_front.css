@@ -143,9 +143,42 @@ a:hover {
 
 /*↓ ↓↓ ------ La SECTION (Partie) A PROPOS (couleur des fa fa et des (primary) a) ↓ ↓↓ ---------- ↓ */
 .text-primary, a {
-    color: #B8860B /*← Nom de la couleur :#B8860B DarkGoldenRod*/;
+    color: #DAA520 /*← Nom de la couleur :#DAA520 GoldenRod*/;
 }
+
 /*↑ ↑↑ ------ La SECTION (Partie) A PROPOS (couleur des fa fa et des (primary) a) ↑ ↑↑ ---------- ↑ */
+
+a, a.active, a:active, a:focus, a:hover { /* ← Gère la le hover sur "Telecharger CV" */
+    outline: 0;
+    text-decoration: none;
+}
+/*                                --------------------------------                                 */
+
+
+/* ↓ ↓↓  La (partie) Section  FORMATION  ↓  ↓↓   ↓ */
+#portfolio .portfolio-item .portfolio-link .portfolio-hover { /* ← Ici je gère le Hover (et la focalisation sur mes formations.) */
+    background: rgba(210, 175, 56, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* ↑ ↑↑  La (partie) Section  FORMATION  ↑  ↑↑   ↑ */
+
+
+
+
+
+/*↓ ↓↓ ------ La SECTION (Partie) Parcours professionel  ↓ ↓↓ ---------- ↓ */
+
+.timeline > li .timeline-image { /* ← Gère (la couleur) background des petites fenêtres (cercles) li*/
+    color: #fff;
+    text-align: center;
+    background-color: white;
+}
+
+/*↑ ↑↑ ------ La SECTION (Partie) Parcours professionel  ↑ ↑↑ ---------- ↑ */
+
+
 
 
 /*La partie (où il y a le formulaire) pour me contacter ↓ */

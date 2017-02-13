@@ -33,7 +33,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Jean-Yves N. - Intégrateur Développeur web</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -93,9 +93,9 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
-                    <li>
-                       <a href="#"> <i class="fa fa-user" aria-hidden="true"></i></a> 
-                    </li>
+                    <!-- <li>
+                       <a href="admin/authentification.php"> <i class="fa fa-user" aria-hidden="true"></i></a>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -332,13 +332,14 @@
                             $i++;
                     }                        
                      ?>
-                       <!--  <li class="timeline-inverted">
+                        <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>Prenez
+                                <h4>  <a href="docs/cv_jeanyves_n_v4_public.pdf" target="_blank"> Télécharger
                                     <br>mon
-                                    <br>âme !</h4>
+                                    <br>CV
+                                    <br> <i class="fa fa-download" aria-hidden="true"></i> </a></h4>
                             </div>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -506,7 +507,7 @@
                         <li><a href="#">Privacy Policy</a>
                         </li>
                         <li>
-                        <a href="#"> <i class="fa fa-user" aria-hidden="true"></i></a>
+                        <a href="admin/authentification.php"> <i class="fa fa-user" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>

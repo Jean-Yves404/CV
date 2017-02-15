@@ -305,7 +305,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Parcours professionel</h2>
-                    <h3 class="section-subheading text-muted">Mes éxpériences professinelles passées</h3>
+                    <h3 class="section-subheading text-muted">Mes expériences professionelles passées.</h3>
                 </div>
             </div>
             <div class="row">
@@ -504,10 +504,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li>
-                        <a href="admin/authentification.php"> <i class="fa fa-user" aria-hidden="true"></i></a>
+                        <!-- <li><a href="#">Privacy Policy</a></li> -->
+                        <li><a href="admin/authentification.php" target="_blank"> <i class="fa fa-user" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>

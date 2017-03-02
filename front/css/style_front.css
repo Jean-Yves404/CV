@@ -3,7 +3,35 @@
 	background-color: red;
 }*/
 
-
+/*↓ ↓ ↓↓  Les Médias Querrys ↓ ↓↓ ↓*//*-----------------------------------------------*/
+header .intro-text .intro-lead-in {
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: italic;
+    font-size: 60px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    color: #FFF;
+}
+@media (max-width: 600px) {
+header .intro-text .intro-heading {
+   text-transform: uppercase;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 50px;
+    margin-bottom: 25px
+  }
+}   
+section h2.section-heading{
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+@media (max-width: 600px) {
+    section h2.section-heading{
+        font-size: 35px;
+    }
+}
+/*↑ ↑ ↑↑  Les Médias Querrys ↑ ↑↑ ↑*//*-----------------------------------------------*/
 
 /* --- Ici c'est le Parallax ↓ -------------------------------------------------- */
 .parallax-window {
@@ -18,7 +46,7 @@ header {
 	background: none;
 }
 
-header .intro-text .intro-heading {
+/*header .intro-text .intro-heading {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700;
@@ -33,7 +61,7 @@ header .intro-text .intro-lead-in {
     font-size: 50px;
     line-height: 40px;
     margin-bottom: 50px;
-}
+}*/
 
 
 
@@ -49,7 +77,7 @@ body{
 
 :: selection{
     text-shadow: none;
-    background-color: ##DAA520;
+    background-color: #DAA520;
 }
 /* ↑ (couleur de la) ↑ Selection de texte ↑ (ou autre) ↑*/
 
@@ -310,3 +338,5 @@ ul.social-buttons li a {
     -moz-transition: all .3s;
     transition: all .3s;
 /*↑---↑ Les FaFa Réseaux sociaux dans le Footer ↑ --- ↑↑ */
+
+

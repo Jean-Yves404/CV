@@ -38,6 +38,7 @@ session_start(); // Connexion/Déconnexion
 		<br>
 		<div class="container">
 		<?php
+		date_default_timezone_set('Europe/Paris');
 			$date = date("d M Y");
 			$heure = date("H:i");
 			$resultat = $pdo -> query("SELECT * FROM utilisateur");

@@ -36,7 +36,7 @@ if(isset($_GET['deconnect'])){
 			$id_formation = addslashes($_POST['id_formation']);
 			// $id_formation = addslashes($_POST['id_formation']);
 
-		$pdo->exec("INSERT INTO formation VALUES (NULL, '$titre_f', '$sous_titre_f	', '$date_f', '$description_f')");
+		$pdo->exec("INSERT INTO formation VALUES (NULL, '$titre_f', '$sous_titre_f	', '$date_f', '$description_f','')");
 			header('location: ../admin/formation.php');
 			exit();
 

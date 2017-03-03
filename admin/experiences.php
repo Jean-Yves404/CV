@@ -28,17 +28,17 @@ session_start();
 
 <?php
     if($_POST){ // On vérifie si on insert une nouvelle compétence
-        if($_POST['titre_exp']!='' && $_POST['sous_titre_exp']!='' && $_POST['dates']!='' && $_POST['description']!=''){
+        if($_POST['titre_exp']!='' && $_POST['sous_titre_exp']!='' && $_POST['date_exp']!='' && $_POST['description']!=''){
 
             $titre_exp = addslashes($_POST['titre_exp']);
             $sous_titre_exp = addslashes($_POST['sous_titre_exp']);
             $dates = addslashes($_POST['date_exp']);
             $description = addslashes($_POST['description']);
-            $id_experiences = addslashes($_POST['id_experiences']);
+            
 
-        $pdo->exec("INSERT INTO experiences VALUES (NULL, '$titre_exp', '$sous_titre_exp ', '$dates', '$description')");
-            header('location: ../admin/experiences.php');
-            exit();
+        $pdo->exec("INSERT INTO experiences VALUES (NULL, '$titre_exp', '$sous_titre_exp ', '$dates', '$description','')");
+           /* header('location: ../admin/experiences.php');*/
+           /* exit();*/
 
             }//←fermeture du if
         } //←fermeture du isset
@@ -87,7 +87,7 @@ session_start();
                         </tr>
                         <tr>    
                             <td>Date</td> 
-                            <td><input type="text" name="dates" value="" size="50"  required></td>                           
+                            <td><input type="text" name="date_exp" value="" size="50"  required></td>                           
                         </tr>
                         <tr>
                             <td>Description</td> 
